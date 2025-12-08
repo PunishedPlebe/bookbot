@@ -9,11 +9,20 @@ def get_book_contents(filepath):
     return book_text
 
 def main():
-    print("")
-    print("Calculating the word count...")
-    print(f"Found {word_count(get_book_contents("books/frankenstein.txt"))} total words")
-    print("")
-    print("Generating list of dictionaries holding character and count values...")
-    print(f"{dict_sort(character_count(get_book_contents("books/frankenstein.txt")))}")
+    file_path = "books/frankenstein.txt"
+    dict_lst = dict_sort(character_count(get_book_contents(file_path)))
+    print("============ BOOKBOT ============")
+    print(f"Analyzing book found at {file_path}...")
+    print("----------- Word Count ----------")
+    print(f"Found {word_count(get_book_contents(file_path))} total words")
+    print("--------- Character Count -------")
+    for dict in dict_lst:
+        if dict["char"].isalpha() == True:
+            print(f"{dict["char"]}: {dict["num"]}")
+        else:
+            continue
+    print("============= END ===============")
+
+
 
 main()
