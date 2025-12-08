@@ -1,9 +1,9 @@
-def word_count(book_text):
-    word_lst = book_text.split()
-    word_count = 0
-    for word in word_lst:
-        word_count += 1
-    return word_count
+def word_count(book_text): #function to return a count of the words in the input string
+    word_lst = book_text.split() #creates a list of entries by spliting the  passed string at the spaces
+    word_count = 0 #create a word count variable
+    for word in word_lst: #for every word in the word list
+        word_count += 1 #increment the counter by one
+    return word_count #return the word count as an int
 
 def character_count(book_text):
     found_char = {} #create a dictonary to store character:count(int) pairs
